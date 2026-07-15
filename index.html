@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Noodlezoo Menu</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -16,7 +16,9 @@ font-family:Arial,sans-serif;
 
 body{
 height:100vh;
-background:url("cover.png") center center/cover no-repeat;
+background:url("cover.png") center center;
+background-size:cover;
+background-repeat:no-repeat;
 display:flex;
 justify-content:center;
 align-items:flex-end;
@@ -25,45 +27,46 @@ align-items:flex-end;
 .overlay{
 width:100%;
 height:100%;
-background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.15));
+background:linear-gradient(to top,rgba(0,0,0,.80),rgba(0,0,0,.15));
 display:flex;
 justify-content:center;
 align-items:flex-end;
 padding-bottom:60px;
 }
 
-.btn{
+.menu-btn{
 background:#D4AF37;
 color:#111;
-padding:18px 45px;
-border-radius:50px;
 text-decoration:none;
-font-size:22px;
+padding:18px 45px;
+font-size:24px;
 font-weight:bold;
-box-shadow:0 8px 25px rgba(0,0,0,.4);
+border-radius:50px;
 transition:.3s;
+box-shadow:0 8px 25px rgba(0,0,0,.35);
 }
 
-.btn:hover{
+.menu-btn:hover{
 transform:scale(1.05);
 }
 
 .whatsapp{
 position:fixed;
-bottom:20px;
 right:20px;
+bottom:20px;
 width:60px;
 height:60px;
-border-radius:50%;
 background:#25D366;
+border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:32px;
 text-decoration:none;
-color:white;
-box-shadow:0 5px 20px rgba(0,0,0,.35);
+font-size:30px;
+color:#fff;
+box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
+
 </style>
 
 </head>
@@ -72,15 +75,13 @@ box-shadow:0 5px 20px rgba(0,0,0,.35);
 
 <div class="overlay">
 
-<a class="btn" href="MENU NOODLEZOO.pdf" target="_blank">
-📖 View Menu
+<a class="menu-btn" href="MENU NOODLEZOO.pdf" target="_blank">
+📖 VIEW MENU
 </a>
 
 </div>
 
-<a class="whatsapp"
-href="https://wa.me/971561065002"
-target="_blank">
+<a class="whatsapp" href="https://wa.me/971561065002" target="_blank">
 💬
 </a>
 

@@ -7,7 +7,7 @@
 
 <title>NOODLEZOO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -23,14 +23,16 @@ font-family:'Poppins',sans-serif;
 body{
 
 background:
-linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.82)),
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.88)),
 url("cover.png") center center/cover no-repeat fixed;
 
 min-height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
-padding:25px;
+
+padding:22px;
 
 }
 
@@ -39,36 +41,46 @@ padding:25px;
 width:100%;
 max-width:430px;
 
-animation:fade .8s ease;
+animation:fade .8s;
 
 }
 
 .card{
 
+position:relative;
+overflow:hidden;
+
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 
 padding:22px;
 
 margin-bottom:18px;
 
-text-decoration:none;
-
 border-radius:24px;
+
+text-decoration:none;
 
 background:rgba(18,18,18,.82);
 
-backdrop-filter:blur(16px);
+backdrop-filter:blur(18px);
 
-border:1px solid rgba(255,140,0,.35);
+border:1px solid rgba(255,140,0,.28);
 
-box-shadow:0 10px 30px rgba(0,0,0,.40);
+box-shadow:0 12px 30px rgba(0,0,0,.45);
 
 transition:.35s;
 
-position:relative;
-overflow:hidden;
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
+border-color:#ff9800;
+
+box-shadow:0 0 18px rgba(255,152,0,.30);
 
 }
 
@@ -98,17 +110,7 @@ transition:.8s;
 
 .card:hover::before{
 
-left:160%;
-
-}
-
-.card:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 15px 40px rgba(255,140,0,.25);
-
-border-color:#ff9800;
+left:170%;
 
 }
 
@@ -122,8 +124,8 @@ gap:18px;
 
 .icon{
 
-width:72px;
-height:72px;
+width:70px;
+height:70px;
 
 border-radius:20px;
 
@@ -131,37 +133,29 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-font-size:34px;
+font-size:30px;
 
 flex-shrink:0;
 
 }
 
 .menu{
-
 background:rgba(255,140,0,.15);
 color:#ff9800;
-
 }
 
 .talabat{
-
-background:#ff6b00;
-color:#fff;
-
+background:linear-gradient(135deg,#ff6b00,#ff8c00);
+color:white;
 }
 
 .whatsapp{
-
 background:rgba(37,211,102,.18);
 color:#25D366;
-
 }
 
 .instagram{
-
-background:#2b2b2b;
-
+background:#2d2d2d;
 }
 
 .instagram i{
@@ -169,6 +163,7 @@ background:#2b2b2b;
 background:linear-gradient(45deg,#833AB4,#E1306C,#FCAF45);
 
 -webkit-background-clip:text;
+
 -webkit-text-fill-color:transparent;
 
 }
@@ -176,30 +171,68 @@ background:linear-gradient(45deg,#833AB4,#E1306C,#FCAF45);
 .text h2{
 
 color:#fff;
-font-size:24px;
-font-weight:600;
+
+font-size:23px;
 
 }
 
 .text p{
 
 color:#ffb04d;
-margin-top:5px;
+
+margin-top:4px;
+
+font-size:14px;
+
+}
+.arrow{
+
+width:48px;
+height:48px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:rgba(255,152,0,.08);
+
+border:2px solid rgba(255,152,0,.45);
+
+color:#ff9800;
+
+box-shadow:0 0 10px rgba(255,152,0,.30);
+
+transition:.35s;
 
 }
 
-.arrow{
+.card:hover .arrow{
 
-font-size:24px;
-color:#ff9800;
+background:#ff9800;
+
+color:#fff;
+
+border-color:#ff9800;
+
+box-shadow:
+0 0 12px #ff9800,
+0 0 28px rgba(255,152,0,.8),
+0 0 45px rgba(255,152,0,.45);
+
+transform:translateX(6px);
 
 }
 
 .footer{
 
-margin-top:18px;
 text-align:center;
-color:#aaa;
+
+color:#9d9d9d;
+
+margin-top:12px;
+
 font-size:13px;
 
 }
@@ -207,13 +240,17 @@ font-size:13px;
 @keyframes fade{
 
 from{
+
 opacity:0;
-transform:translateY(30px);
+transform:translateY(25px);
+
 }
 
 to{
+
 opacity:1;
 transform:translateY(0);
+
 }
 
 }
@@ -225,7 +262,7 @@ transform:translateY(0);
 <body>
 
 <div class="container">
-<!-- Online Menu -->
+
 
 <a href="MENU%20NOODLEZOO.pdf" target="_blank" class="card">
 
@@ -319,6 +356,7 @@ transform:translateY(0);
 
 <div class="footer">
 
+🍜 NOODLEZOO<br>
 New Shahama • Abu Dhabi
 
 </div>
@@ -327,4 +365,3 @@ New Shahama • Abu Dhabi
 
 </body>
 </html>
-

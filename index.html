@@ -8,7 +8,6 @@
 <title>NOODLEZOO</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
@@ -27,22 +26,17 @@ linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.88)),
 url("cover.png") center center/cover no-repeat fixed;
 
 min-height:100vh;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
 padding:22px;
 
 }
 
 .container{
-
 width:100%;
 max-width:430px;
-
 animation:fade .8s;
-
 }
 
 .card{
@@ -109,17 +103,13 @@ transition:.8s;
 }
 
 .card:hover::before{
-
 left:170%;
-
 }
 
 .left{
-
 display:flex;
 align-items:center;
 gap:18px;
-
 }
 
 .icon{
@@ -145,10 +135,29 @@ color:#ff9800;
 }
 
 .talabat{
+
 background:linear-gradient(135deg,#ff6b00,#ff8c00);
-color:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:0;
+
+box-shadow:0 0 18px rgba(255,120,0,.35);
+
 }
 
+.talabat img{
+
+width:44px;
+height:44px;
+
+object-fit:contain;
+
+display:block;
+
+}
 .whatsapp{
 background:rgba(37,211,102,.18);
 color:#25D366;
@@ -159,32 +168,23 @@ background:#2d2d2d;
 }
 
 .instagram i{
-
 background:linear-gradient(45deg,#833AB4,#E1306C,#FCAF45);
-
 -webkit-background-clip:text;
-
 -webkit-text-fill-color:transparent;
-
 }
 
 .text h2{
-
 color:#fff;
-
 font-size:23px;
-
+font-weight:600;
 }
 
 .text p{
-
 color:#ffb04d;
-
 margin-top:4px;
-
 font-size:14px;
-
 }
+
 .arrow{
 
 width:48px;
@@ -202,7 +202,10 @@ border:2px solid rgba(255,152,0,.45);
 
 color:#ff9800;
 
-box-shadow:0 0 10px rgba(255,152,0,.30);
+box-shadow:
+0 0 8px rgba(255,152,0,.25);
+
+animation:glow 1.5s infinite alternate;
 
 transition:.35s;
 
@@ -216,41 +219,47 @@ color:#fff;
 
 border-color:#ff9800;
 
+transform:translateX(6px);
+
 box-shadow:
 0 0 12px #ff9800,
-0 0 28px rgba(255,152,0,.8),
-0 0 45px rgba(255,152,0,.45);
-
-transform:translateX(6px);
+0 0 30px rgba(255,152,0,.9),
+0 0 50px rgba(255,152,0,.45);
 
 }
 
 .footer{
-
 text-align:center;
-
 color:#9d9d9d;
-
 margin-top:12px;
-
 font-size:13px;
+}
+
+@keyframes glow{
+
+from{
+box-shadow:
+0 0 5px rgba(255,152,0,.25);
+}
+
+to{
+box-shadow:
+0 0 12px #ff9800,
+0 0 28px rgba(255,152,0,.8);
+}
 
 }
 
 @keyframes fade{
 
 from{
-
 opacity:0;
 transform:translateY(25px);
-
 }
 
 to{
-
 opacity:1;
 transform:translateY(0);
-
 }
 
 }
@@ -262,7 +271,6 @@ transform:translateY(0);
 <body>
 
 <div class="container">
-
 
 <a href="MENU%20NOODLEZOO.pdf" target="_blank" class="card">
 
@@ -285,25 +293,24 @@ transform:translateY(0);
 
 </a>
 
-
 <a href="https://www.talabat.com/uae/noodlezoo" target="_blank" class="card">
 
-    <div class="left">
+<div class="left">
 
-        <div class="icon talabat">
-            <img src="talabat.png" alt="Talabat">
-        </div>
+<div class="icon talabat">
+<img src="talabat.png" alt="Talabat">
+</div>
 
-        <div class="text">
-            <h2>Talabat</h2>
-            <p>Order now</p>
-        </div>
+<div class="text">
+<h2>Talabat</h2>
+<p>Order now</p>
+</div>
 
-    </div>
+</div>
 
-    <div class="arrow">
-        <i class="fa-solid fa-chevron-right"></i>
-    </div>
+<div class="arrow">
+<i class="fa-solid fa-chevron-right"></i>
+</div>
 
 </a>
 <!-- WhatsApp -->
@@ -356,7 +363,7 @@ transform:translateY(0);
 
 <div class="footer">
 
-🍜 NOODLEZOO<br>
+🍜 <strong>NOODLEZOO</strong><br>
 New Shahama • Abu Dhabi
 
 </div>

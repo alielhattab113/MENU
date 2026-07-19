@@ -1,166 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NOODLEZOO</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-
-}
-
-html{
-
-scroll-behavior:smooth;
-
 }
 
 body{
 
+background:
+linear-gradient(
+rgba(0,0,0,.22),
+rgba(0,0,0,.45)
+),
+url("cover.png") center center/cover no-repeat fixed;
+
 min-height:100vh;
 
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
-padding:24px;
+padding:22px;
 
 overflow-x:hidden;
 
-background:
-
-linear-gradient(
-
-rgba(0,0,0,.12),
-
-rgba(0,0,0,.38)
-
-),
-
-url("cover.png") center center/cover no-repeat fixed;
-
-position:relative;
-
 }
-
-/* خلفية إضافية لإظهار اللوجو */
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-inset:0;
-
-background:url("cover.png") center center/70% no-repeat;
-
-opacity:.18;
-
-filter:
-
-brightness(1.4)
-
-contrast(1.15);
-
-pointer-events:none;
-
-z-index:0;
-
-}
-
-/* إضاءة خفيفة */
-
-body::after{
-
-content:"";
-
-position:fixed;
-
-inset:0;
-
-background:
-
-radial-gradient(circle at center,
-
-rgba(255,140,0,.08),
-
-transparent 65%);
-
-pointer-events:none;
-
-z-index:1;
-
-}
-
-/* Container */
 
 .container{
 
-position:relative;
-
-z-index:5;
-
 width:100%;
-
 max-width:430px;
 
-animation:fade .8s ease;
+animation:fade .8s;
 
 }
-
-/* Logo */
-
-.logo{
-
-display:flex;
-
-justify-content:center;
-
-margin-bottom:28px;
-
-}
-
-.logo img{
-
-width:185px;
-
-filter:
-
-drop-shadow(0 0 22px rgba(255,140,0,.28));
-
-transition:.35s;
-
-}
-
-.logo img:hover{
-
-transform:scale(1.04);
-
-}
-
-/* Cards */
 
 .card{
 
@@ -169,57 +56,47 @@ position:relative;
 overflow:hidden;
 
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
 
 padding:22px;
 
 margin-bottom:18px;
 
-border-radius:26px;
+border-radius:24px;
 
 text-decoration:none;
 
-background:rgba(20,20,20,.45);
+background:rgba(18,18,18,.58);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
 
--webkit-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,170,0,.30);
+border:1px solid rgba(255,170,0,.45);
 
 box-shadow:
 
-0 12px 30px rgba(0,0,0,.28),
-
-0 0 18px rgba(255,140,0,.08);
+0 10px 24px rgba(0,0,0,.28),
+0 0 20px rgba(255,140,0,.08);
 
 transition:.35s ease;
 
 }
-/* ===========================
-   CARD HOVER
-=========================== */
-
 .card:hover{
 
-transform:translateY(-8px) scale(1.02);
+transform:translateY(-5px);
 
-background:rgba(20,20,20,.38);
+background:rgba(18,18,18,.52);
 
-border-color:rgba(255,170,0,.60);
+border-color:#ff9800;
 
 box-shadow:
 
-0 20px 40px rgba(0,0,0,.35),
+0 12px 28px rgba(0,0,0,.30),
 
-0 0 35px rgba(255,153,0,.18);
+0 0 25px rgba(255,152,0,.20);
 
 }
-
-/* Premium Shine */
 
 .card::before{
 
@@ -228,11 +105,9 @@ content:"";
 position:absolute;
 
 top:0;
-
-left:-140%;
+left:-120%;
 
 width:70%;
-
 height:100%;
 
 background:linear-gradient(
@@ -241,7 +116,7 @@ background:linear-gradient(
 
 transparent,
 
-rgba(255,255,255,.16),
+rgba(255,255,255,.12),
 
 transparent
 
@@ -249,7 +124,7 @@ transparent
 
 transform:skewX(-25deg);
 
-transition:1s;
+transition:.8s;
 
 }
 
@@ -258,8 +133,6 @@ transition:1s;
 left:170%;
 
 }
-
-/* Left */
 
 .left{
 
@@ -271,57 +144,32 @@ gap:18px;
 
 }
 
-/* Icons */
-
 .icon{
 
-width:74px;
+width:72px;
+height:72px;
 
-height:74px;
-
-border-radius:22px;
+border-radius:20px;
 
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
 font-size:30px;
 
 flex-shrink:0;
 
-backdrop-filter:blur(8px);
-
--webkit-backdrop-filter:blur(8px);
-
-box-shadow:
-
-inset 0 0 15px rgba(255,255,255,.06),
-
-0 8px 18px rgba(0,0,0,.22);
-
-transition:.35s;
+box-shadow:0 0 12px rgba(255,255,255,.05) inset;
 
 }
-
-.card:hover .icon{
-
-transform:scale(1.08);
-
-}
-
-/* Menu */
 
 .menu{
 
-background:rgba(255,153,0,.18);
+background:rgba(255,140,0,.18);
 
 color:#ff9800;
 
 }
-
-/* Talabat */
 
 .talabat{
 
@@ -331,7 +179,11 @@ color:#fff;
 
 }
 
-/* WhatsApp */
+.talabat i{
+
+font-size:34px;
+
+}
 
 .whatsapp{
 
@@ -341,8 +193,6 @@ color:#25D366;
 
 }
 
-/* Instagram */
-
 .instagram{
 
 background:rgba(255,255,255,.05);
@@ -351,86 +201,74 @@ background:rgba(255,255,255,.05);
 
 .instagram i{
 
-background:linear-gradient(
-45deg,
-#833AB4,
-#E1306C,
-#FCAF45);
+background:linear-gradient(45deg,#833AB4,#E1306C,#FCAF45);
 
 -webkit-background-clip:text;
 
 -webkit-text-fill-color:transparent;
 
 }
-
-/* Text */
-
 .text h2{
 
 color:#fff;
 
 font-size:23px;
 
-font-weight:700;
+font-weight:600;
 
-letter-spacing:.4px;
-
-text-shadow:0 2px 8px rgba(0,0,0,.35);
+letter-spacing:.3px;
 
 }
 
 .text p{
 
-margin-top:5px;
+color:#ffb04d;
+
+margin-top:4px;
 
 font-size:14px;
 
 font-weight:500;
 
-color:#ffb347;
-
 opacity:.95;
 
 }
-/* ===========================
-   PREMIUM ARROW
-=========================== */
 
 .arrow{
 
-width:56px;
-height:56px;
+width:52px;
+
+height:52px;
 
 border-radius:50%;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
 
-background:rgba(255,153,0,.08);
+background:rgba(255,152,0,.10);
 
-border:2px solid rgba(255,170,0,.45);
+border:2px solid rgba(255,170,0,.55);
 
 color:#ff9800;
 
 font-size:18px;
 
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
+backdrop-filter:blur(8px);
+
+-webkit-backdrop-filter:blur(8px);
 
 box-shadow:
-0 0 8px rgba(255,153,0,.20),
-0 0 18px rgba(255,153,0,.12);
+
+0 0 8px rgba(255,152,0,.20),
+
+0 0 18px rgba(255,152,0,.12);
 
 transition:all .35s ease;
 
-animation:glow 2s infinite alternate;
-
-}
-
-.arrow i{
-
-transition:.35s ease;
+animation:glow 1.8s infinite alternate;
 
 }
 
@@ -442,39 +280,29 @@ color:#fff;
 
 border-color:#ff9800;
 
-transform:translateX(8px) scale(1.12);
+transform:translateX(6px) scale(1.08);
 
 box-shadow:
 
-0 0 15px #ff9800,
+0 0 12px #ff9800,
 
-0 0 30px rgba(255,153,0,.70),
+0 0 24px rgba(255,152,0,.75),
 
-0 0 50px rgba(255,153,0,.30);
-
-}
-
-.card:hover .arrow i{
-
-transform:translateX(3px);
+0 0 40px rgba(255,152,0,.35);
 
 }
-
-/* ===========================
-   FOOTER
-=========================== */
 
 .footer{
 
-margin-top:20px;
-
 text-align:center;
+
+color:#bdbdbd;
+
+margin-top:16px;
 
 font-size:13px;
 
 line-height:1.8;
-
-color:#bdbdbd;
 
 }
 
@@ -482,34 +310,23 @@ color:#bdbdbd;
 
 color:#ff9800;
 
-font-weight:700;
-
 letter-spacing:1px;
 
-text-shadow:0 0 10px rgba(255,153,0,.25);
-
 }
-
-/* ===========================
-   ANIMATIONS
-=========================== */
-
 @keyframes glow{
 
 from{
 
 box-shadow:
-0 0 6px rgba(255,152,0,.20);
+0 0 5px rgba(255,152,0,.20);
 
 }
 
 to{
 
 box-shadow:
-
-0 0 14px rgba(255,152,0,.55),
-
-0 0 30px rgba(255,152,0,.35);
+0 0 12px rgba(255,152,0,.55),
+0 0 24px rgba(255,152,0,.35);
 
 }
 
@@ -517,15 +334,15 @@ box-shadow:
 
 @keyframes fade{
 
-0%{
+from{
 
 opacity:0;
 
-transform:translateY(30px);
+transform:translateY(25px);
 
 }
 
-100%{
+to{
 
 opacity:1;
 
@@ -535,75 +352,7 @@ transform:translateY(0);
 
 }
 
-/* دخول الكروت */
-
-.card{
-
-opacity:0;
-
-animation:fade .7s forwards;
-
-}
-
-.card:nth-of-type(1){
-
-animation-delay:.15s;
-
-}
-
-.card:nth-of-type(2){
-
-animation-delay:.30s;
-
-}
-
-.card:nth-of-type(3){
-
-animation-delay:.45s;
-
-}
-
-.card:nth-of-type(4){
-
-animation-delay:.60s;
-
-}
-
-/* ===========================
-   Ripple
-=========================== */
-
-.ripple{
-
-position:absolute;
-
-border-radius:50%;
-
-transform:scale(0);
-
-background:rgba(255,170,0,.28);
-
-animation:ripple .7s linear;
-
-pointer-events:none;
-
-}
-
-@keyframes ripple{
-
-100%{
-
-transform:scale(4);
-
-opacity:0;
-
-}
-
-}
-
-/* ===========================
-   Responsive
-=========================== */
+/* Responsive */
 
 @media(max-width:480px){
 
@@ -617,15 +366,13 @@ max-width:100%;
 
 padding:20px;
 
-border-radius:22px;
-
 }
 
 .icon{
 
-width:66px;
+width:64px;
 
-height:66px;
+height:64px;
 
 font-size:28px;
 
@@ -645,17 +392,11 @@ font-size:13px;
 
 .arrow{
 
-width:50px;
+width:48px;
 
-height:50px;
+height:48px;
 
 font-size:16px;
-
-}
-
-.footer{
-
-font-size:12px;
 
 }
 
@@ -668,248 +409,106 @@ font-size:12px;
 <body>
 
 <div class="container">
+<!-- Online Menu -->
 
-<div class="logo">
+<a href="MENU%20NOODLEZOO.pdf" target="_blank" class="card">
 
-<img src="logo.png" alt="NOODLEZOO">
+    <div class="left">
 
-</div>
-<!-- ===========================
-     ONLINE MENU
-=========================== -->
+        <div class="icon menu">
+            <i class="fa-solid fa-utensils"></i>
+        </div>
 
-<a href="MENU%20NOODLEZOO.pdf"
-target="_blank"
-class="card">
+        <div class="text">
+            <h2>Online Menu</h2>
+            <p>Tap to view</p>
+        </div>
 
-<div class="left">
+    </div>
 
-<div class="icon menu">
-<i class="fa-solid fa-utensils"></i>
-</div>
-
-<div class="text">
-<h2>Online Menu</h2>
-<p>Tap to View Menu</p>
-</div>
-
-</div>
-
-<div class="arrow">
-<i class="fa-solid fa-chevron-right"></i>
-</div>
+    <div class="arrow">
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
 
 </a>
 
-<!-- ===========================
-     TALABAT
-=========================== -->
+<!-- Talabat -->
 
-<a href="https://www.talabat.com/uae/noodlezoo"
-target="_blank"
-class="card">
+<a href="https://www.talabat.com/uae/noodlezoo" target="_blank" class="card">
 
-<div class="left">
+    <div class="left">
 
-<div class="icon talabat">
+        <div class="icon talabat">
+            <i class="fa-solid fa-motorcycle"></i>
+        </div>
 
-<img src="talabat.png"
-alt="Talabat"
-style="width:40px;height:40px;object-fit:contain;">
+        <div class="text">
+            <h2>Talabat</h2>
+            <p>Order now</p>
+        </div>
 
-</div>
+    </div>
 
-<div class="text">
-<h2>Talabat</h2>
-<p>Order Online</p>
-</div>
-
-</div>
-
-<div class="arrow">
-<i class="fa-solid fa-chevron-right"></i>
-</div>
+    <div class="arrow">
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
 
 </a>
 
-<!-- ===========================
-     WHATSAPP
-=========================== -->
+<!-- WhatsApp -->
 
-<a href="https://wa.me/971561065002"
-target="_blank"
-class="card">
+<a href="https://wa.me/971561065002" target="_blank" class="card">
 
-<div class="left">
+    <div class="left">
 
-<div class="icon whatsapp">
-<i class="fa-brands fa-whatsapp"></i>
-</div>
+        <div class="icon whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
 
-<div class="text">
-<h2>WhatsApp</h2>
-<p>Chat With Us</p>
-</div>
+        <div class="text">
+            <h2>WhatsApp</h2>
+            <p>Chat with us</p>
+        </div>
 
-</div>
+    </div>
 
-<div class="arrow">
-<i class="fa-solid fa-chevron-right"></i>
-</div>
+    <div class="arrow">
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
 
 </a>
 
-<!-- ===========================
-     INSTAGRAM
-=========================== -->
+<!-- Instagram -->
 
-<a href="https://instagram.com/noodlezoo_"
-target="_blank"
-class="card">
+<a href="https://instagram.com/noodlezoo_" target="_blank" class="card">
 
-<div class="left">
+    <div class="left">
 
-<div class="icon instagram">
-<i class="fa-brands fa-instagram"></i>
-</div>
+        <div class="icon instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </div>
 
-<div class="text">
-<h2>Instagram</h2>
-<p>Follow Our Page</p>
-</div>
+        <div class="text">
+            <h2>Instagram</h2>
+            <p>Follow us</p>
+        </div>
 
-</div>
+    </div>
 
-<div class="arrow">
-<i class="fa-solid fa-chevron-right"></i>
-</div>
+    <div class="arrow">
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
 
 </a>
-<!-- ===========================
-     FOOTER
-=========================== -->
 
 <div class="footer">
 
-🍜 <strong>NOODLEZOO</strong><br>
-New Shahama • Abu Dhabi
+    🍜 <strong>NOODLEZOO</strong><br>
+    New Shahama • Abu Dhabi
 
 </div>
 
 </div>
-
-<script>
-
-/* Ripple Effect */
-
-document.querySelectorAll(".card").forEach(card=>{
-
-card.addEventListener("click",function(e){
-
-const ripple=document.createElement("span");
-
-const rect=this.getBoundingClientRect();
-
-const size=Math.max(rect.width,rect.height);
-
-ripple.style.width=size+"px";
-ripple.style.height=size+"px";
-
-ripple.style.left=(e.clientX-rect.left-size/2)+"px";
-ripple.style.top=(e.clientY-rect.top-size/2)+"px";
-
-ripple.className="ripple";
-
-this.appendChild(ripple);
-
-setTimeout(()=>{
-
-ripple.remove();
-
-},700);
-
-});
-
-});
-
-/* Card Hover Animation */
-
-document.querySelectorAll(".card").forEach(card=>{
-
-card.addEventListener("mouseenter",()=>{
-
-card.style.transition=".35s";
-
-});
-
-});
-
-</script>
 
 </body>
-
-</html>
-<!-- ===========================
-     FOOTER
-=========================== -->
-
-<div class="footer">
-
-🍜 <strong>NOODLEZOO</strong><br>
-New Shahama • Abu Dhabi
-
-</div>
-
-</div>
-
-<script>
-
-/* Ripple Effect */
-
-document.querySelectorAll(".card").forEach(card=>{
-
-card.addEventListener("click",function(e){
-
-const ripple=document.createElement("span");
-
-const rect=this.getBoundingClientRect();
-
-const size=Math.max(rect.width,rect.height);
-
-ripple.style.width=size+"px";
-ripple.style.height=size+"px";
-
-ripple.style.left=(e.clientX-rect.left-size/2)+"px";
-ripple.style.top=(e.clientY-rect.top-size/2)+"px";
-
-ripple.className="ripple";
-
-this.appendChild(ripple);
-
-setTimeout(()=>{
-
-ripple.remove();
-
-},700);
-
-});
-
-});
-
-/* Card Hover Animation */
-
-document.querySelectorAll(".card").forEach(card=>{
-
-card.addEventListener("mouseenter",()=>{
-
-card.style.transition=".35s";
-
-});
-
-});
-
-</script>
-
-</body>
-
 </html>
